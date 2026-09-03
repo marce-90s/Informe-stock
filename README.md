@@ -24,7 +24,21 @@ El informe parte de una fuente de datos base y una estructura de proyecto Power 
 - Power BI Desktop
 - Modelo semantico en formato TMDL
 - Git y GitHub para control de versiones
+- Python y KaggleHub para descarga de datos
 
 ## Estado del proyecto
 
 Proyecto en desarrollo. El repositorio se actualizara progresivamente con nuevas paginas, medidas DAX, mejoras visuales y documentacion del proceso.
+
+## Fuente de datos
+
+El proyecto contempla la descarga de datos desde la competencia `inventory-optimization` de Kaggle mediante KaggleHub.
+
+Para descargar los archivos localmente:
+
+```bash
+pip install -r requirements.txt
+python scripts/download_inventory_data.py
+```
+
+Los archivos descargados se guardan en `data/raw/inventory-optimization/`. Esa carpeta esta excluida del control de versiones para evitar subir datos externos o archivos pesados al repositorio.
