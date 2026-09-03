@@ -1,0 +1,22 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-AR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Medidas DAX","Actualizado al"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Medidas DAX'
+ref table 'Actualizado al'
+ref table DateTableTemplate_2a2ffe1a-a7c2-4565-a6d9-b37aa8a24b2e
+ref table 'Calendario Base'
+ref table LocalDateTable_2b8160cc-8579-47cb-8df0-2e5c058d65f6
+
+ref cultureInfo es-ES
+

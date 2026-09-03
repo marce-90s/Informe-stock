@@ -1,0 +1,30 @@
+table 'Actualizado al'
+	lineageTag: 810df069-4f8a-4f79-9d92-0fb1afb7b460
+
+	column datetime
+		dataType: string
+		lineageTag: fee9003b-27cb-48d0-99ef-13baf7224c99
+		summarizeBy: none
+		sourceColumn: datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Actualizado al' = m
+		mode: import
+		source =
+				let
+				    Source = #table(
+				        {"datetime"},
+				        {{
+				            DateTimeZone.RemoveZone(
+				                DateTimeZone.SwitchZone(DateTimeZone.UtcNow(), -3)
+				            )
+				        }}
+				    )
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,19 @@
+table 'Medidas DAX'
+	lineageTag: 99a84b9c-54a4-45a3-b1be-7f2b4acbfeb5
+
+	measure 'Total Registros' = COUNTROWS('Calendario Base')
+		formatString: 0
+		lineageTag: 90df3f43-af67-4d44-9b94-1dc061cc893a
+
+	partition 'Medidas DAX' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

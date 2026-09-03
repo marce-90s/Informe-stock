@@ -1,0 +1,643 @@
+cultureInfo es-ES
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "medidas_DAX": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas DAX"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "medidas DAX": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "medida DAX": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_DAX.total_registros": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas DAX",
+			          "ConceptualProperty": "Total Registros"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total registros": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregate registro": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall registro": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "actualizado_al": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Actualizado al"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "actualizado al": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "actualizado_al.datetime.jerarquía_de_fecha": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Actualizado al",
+			          "VariationSource": "datetime",
+			          "VariationSet": "Variación",
+			          "Hierarchy": "Jerarquía de fechas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "jerarquía de fecha": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "actualizado_al.datetime.año": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Actualizado al",
+			          "VariationSource": "datetime",
+			          "VariationSet": "Variación",
+			          "Hierarchy": "Jerarquía de fechas",
+			          "HierarchyLevel": "Año"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "año": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "datetime año": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "actualizado_al.datetime.trimestre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Actualizado al",
+			          "VariationSource": "datetime",
+			          "VariationSet": "Variación",
+			          "Hierarchy": "Jerarquía de fechas",
+			          "HierarchyLevel": "Trimestre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "trimestre": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "datetime trimestre": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "actualizado_al.datetime.me": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Actualizado al",
+			          "VariationSource": "datetime",
+			          "VariationSet": "Variación",
+			          "Hierarchy": "Jerarquía de fechas",
+			          "HierarchyLevel": "Mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "me": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "datetime me": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "actualizado_al.datetime.día": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Actualizado al",
+			          "VariationSource": "datetime",
+			          "VariationSet": "Variación",
+			          "Hierarchy": "Jerarquía de fechas",
+			          "HierarchyLevel": "Día"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "día": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "datetime día": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "x28_workspaces.type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "x28 Workspaces",
+			          "ConceptualProperty": "type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Tipo Workspace": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medidas_dax.total_usuarios_x_grupo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas DAX",
+			          "ConceptualProperty": "Total Usuarios x Grupo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Total Usuarios": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "actualizado_al_has_datetime": {
+			      "Binding": {
+			        "ConceptualEntity": "Actualizado al"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "actualizado_al": {
+			          "Target": {
+			            "Entity": "actualizado_al"
+			          }
+			        },
+			        "actualizado_al.datetime": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "actualizado_al"
+			            },
+			            "Object": {
+			              "Role": "actualizado_al.datetime"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "actualizado_al_have_datetimes"
+			        }
+			      ]
+			    },
+			    "actualizado_al_datetime_has_jerarquía_de_fecha": {
+			      "Binding": {
+			        "ConceptualEntity": "Actualizado al"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "actualizado_al.datetime": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime"
+			          }
+			        },
+			        "actualizado_al.datetime.jerarquía_de_fecha": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime.jerarquía_de_fecha"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "actualizado_al.datetime"
+			            },
+			            "Object": {
+			              "Role": "actualizado_al.datetime.jerarquía_de_fecha"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "datetimes_have_jerarquía_de_fechas"
+			        }
+			      ]
+			    },
+			    "actualizado_al_datetime_jerarquía_de_fecha_has_actualizado_al_datetime_año": {
+			      "Binding": {
+			        "ConceptualEntity": "Actualizado al"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "actualizado_al.datetime.jerarquía_de_fecha": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime.jerarquía_de_fecha"
+			          }
+			        },
+			        "actualizado_al.datetime.año": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime.año"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "actualizado_al.datetime.jerarquía_de_fecha"
+			            },
+			            "Object": {
+			              "Role": "actualizado_al.datetime.año"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "jerarquía_de_fechas_have_años"
+			        }
+			      ]
+			    },
+			    "actualizado_al_datetime_jerarquía_de_fecha_has_actualizado_al_datetime_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "Actualizado al"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "actualizado_al.datetime.jerarquía_de_fecha": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime.jerarquía_de_fecha"
+			          }
+			        },
+			        "actualizado_al.datetime.trimestre": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "actualizado_al.datetime.jerarquía_de_fecha"
+			            },
+			            "Object": {
+			              "Role": "actualizado_al.datetime.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "jerarquía_de_fechas_have_trimestres"
+			        }
+			      ]
+			    },
+			    "actualizado_al_datetime_jerarquía_de_fecha_has_actualizado_al_datetime_me": {
+			      "Binding": {
+			        "ConceptualEntity": "Actualizado al"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "actualizado_al.datetime.jerarquía_de_fecha": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime.jerarquía_de_fecha"
+			          }
+			        },
+			        "actualizado_al.datetime.me": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime.me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "actualizado_al.datetime.jerarquía_de_fecha"
+			            },
+			            "Object": {
+			              "Role": "actualizado_al.datetime.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "jerarquía_de_fechas_have_me"
+			        }
+			      ]
+			    },
+			    "actualizado_al_datetime_jerarquía_de_fecha_has_actualizado_al_datetime_día": {
+			      "Binding": {
+			        "ConceptualEntity": "Actualizado al"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "actualizado_al.datetime.jerarquía_de_fecha": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime.jerarquía_de_fecha"
+			          }
+			        },
+			        "actualizado_al.datetime.día": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime.día"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "actualizado_al.datetime.jerarquía_de_fecha"
+			            },
+			            "Object": {
+			              "Role": "actualizado_al.datetime.día"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "jerarquía_de_fechas_have_días"
+			        }
+			      ]
+			    },
+			    "actualizado_al_datetime_año_has_actualizado_al_datetime_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "Actualizado al"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "actualizado_al.datetime.año": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime.año"
+			          }
+			        },
+			        "actualizado_al.datetime.trimestre": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "actualizado_al.datetime.año"
+			            },
+			            "Object": {
+			              "Role": "actualizado_al.datetime.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "años_have_trimestres"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "actualizado_al.datetime.trimestre"
+			            },
+			            "Object": {
+			              "Role": "actualizado_al.datetime.año"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_have_años"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "actualizado_al.datetime.trimestre"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "actualizado_al.datetime.año"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_are_in_años"
+			        }
+			      ]
+			    },
+			    "actualizado_al_datetime_trimestre_has_actualizado_al_datetime_me": {
+			      "Binding": {
+			        "ConceptualEntity": "Actualizado al"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "actualizado_al.datetime.trimestre": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime.trimestre"
+			          }
+			        },
+			        "actualizado_al.datetime.me": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime.me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "actualizado_al.datetime.trimestre"
+			            },
+			            "Object": {
+			              "Role": "actualizado_al.datetime.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_have_me"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "actualizado_al.datetime.me"
+			            },
+			            "Object": {
+			              "Role": "actualizado_al.datetime.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "me_have_trimestres"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "actualizado_al.datetime.me"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "actualizado_al.datetime.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "me_are_in_trimestres"
+			        }
+			      ]
+			    },
+			    "actualizado_al_datetime_me_has_actualizado_al_datetime_día": {
+			      "Binding": {
+			        "ConceptualEntity": "Actualizado al"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "actualizado_al.datetime.me": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime.me"
+			          }
+			        },
+			        "actualizado_al.datetime.día": {
+			          "Target": {
+			            "Entity": "actualizado_al.datetime.día"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "actualizado_al.datetime.me"
+			            },
+			            "Object": {
+			              "Role": "actualizado_al.datetime.día"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "me_have_días"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "actualizado_al.datetime.día"
+			            },
+			            "Object": {
+			              "Role": "actualizado_al.datetime.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "días_have_me"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "actualizado_al.datetime.día"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "actualizado_al.datetime.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "días_are_in_me"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+
