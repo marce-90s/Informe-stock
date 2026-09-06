@@ -27,4 +27,3 @@ table 'Actualizado al'
 	annotation PBI_NavigationStepName = Navegación
 
 	annotation PBI_ResultType = Table
-

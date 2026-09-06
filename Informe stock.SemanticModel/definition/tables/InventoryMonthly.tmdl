@@ -1,0 +1,44 @@
+table InventoryMonthly
+	lineageTag: 0f1c1d45-f7d6-45b5-b28c-b9f72f86fa9d
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 65cb8af9-9a53-4bb9-8536-61076e956c1a
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ProductID
+		dataType: string
+		lineageTag: d7910955-e17d-4a1d-a656-06c03532627d
+		summarizeBy: none
+		sourceColumn: ProductID
+
+	column WarehouseID
+		dataType: int64
+		lineageTag: 37d3cf69-5bb9-4c64-b4ff-5f372dff7f33
+		summarizeBy: none
+		sourceColumn: WarehouseID
+
+	column OnHand
+		dataType: int64
+		lineageTag: 307a88a0-1591-46d6-b145-b5c6355f0517
+		summarizeBy: none
+		sourceColumn: OnHand
+
+	column UnitCost
+		dataType: decimal
+		lineageTag: 19560623-e231-4aa7-a428-46e0ec150519
+		summarizeBy: none
+		sourceColumn: UnitCost
+
+	partition InventoryMonthly = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "/InventoryMonthly.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"Date", type date}, {"ProductID", type text}, {"WarehouseID", Int64.Type}, {"OnHand", Int64.Type}, {"UnitCost", Currency.Type}}, "en-US")
+				in Typed

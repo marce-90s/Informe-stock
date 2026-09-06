@@ -1,44 +1,36 @@
-# Informe de Stock
+# Informe de stock · Portfolio Power BI
 
-Proyecto de portfolio desarrollado en Power BI para analizar informacion de stock y documentar el proceso de construccion de un informe empresarial desde su estructura inicial hasta sus futuras mejoras.
+Caso de inventario **simulado** basado en un catálogo y pedidos de ejemplo. Corte: **31/12/2017**. No representa stock real.
 
-## Objetivo del proyecto
+Incluye 400 productos, 9 depósitos, 307.802 movimientos y 12 cierres mensuales. Tres páginas: **Stock al cierre**, **Movimientos** y **Pedidos originales**. Modelo de 15 tablas, 17 relaciones y 17 medidas DAX.
 
-El objetivo es construir un tablero que permita visualizar, controlar y analizar informacion relacionada con stock, con foco en la organizacion del modelo de datos, la claridad del reporte y la trazabilidad del trabajo realizado.
+## Abrir
 
-Este repositorio tambien funciona como evidencia del proceso de desarrollo: cada cambio relevante se registra mediante Git, permitiendo ver la evolucion del informe paso a paso.
+1. Clonar el repositorio.
+2. Ejecutar `python scripts/build_inventory.py` para reproducir datos y configurar la ruta local.
+3. Abrir `Informe stock.pbip` en Power BI Desktop.
+4. Actualizar y guardar para importar los datos en la caché local.
 
-## Alcance inicial
+Los CSV preparados están incluidos. Sin Python, ajustar el parámetro **DataRoot** a la ruta absoluta de `data/prepared`. `python scripts/build_report.py` regenera y sobrescribe las páginas y medidas generadas.
 
-El informe parte de una fuente de datos base y una estructura de proyecto Power BI en formato PBIP. A partir de esta base se iran incorporando visualizaciones, medidas, ajustes de modelo y mejoras de presentacion orientadas al analisis de stock.
+## Estructura
 
-## Contenido del repositorio
+- `archive/`: siete fuentes originales conservadas sin cambios de contenido.
+- `data/prepared/`: datos normalizados, simulación y manifiesto de validación.
+- `scripts/build_inventory.py`: simulación determinista, controles y modelo TMDL.
+- `scripts/build_report.py`: medidas DAX y páginas PBIR.
+- `Informe stock.SemanticModel/`: tablas, parámetro y relaciones.
+- `Informe stock.Report/`: páginas, visuales y tema.
+- [Diseño, supuestos y diccionario](docs/inventario-simulado.md).
 
-- `Informe stock.pbip`: archivo principal del proyecto Power BI.
-- `Informe stock.Report`: definicion visual del reporte.
-- `Informe stock.SemanticModel`: modelo semantico, tablas, relaciones y medidas.
-- `Customer.csv`: archivo de datos utilizado como fuente inicial.
+## Criterios
 
-## Tecnologias utilizadas
+El inventario y los pedidos históricos se analizan por separado. Los depósitos repetidos se consolidan con una tabla de correspondencias. Los cierres se concilian con movimientos y no se suman entre meses. Se usa **UM** porque la fuente no identifica moneda.
 
-- Power BI Desktop
-- Modelo semantico en formato TMDL
-- Git y GitHub para control de versiones
-- Python y KaggleHub para descarga de datos
+La procedencia/licencia de los CSV no está verificada. La utilidad previa `scripts/download_inventory_data.py` se conserva, pero no se usa ni acredita el origen de este caso. Los campos de contacto originales se excluyen del modelo analítico.
 
-## Estado del proyecto
+## Validación
 
-Proyecto en desarrollo. El repositorio se actualizara progresivamente con nuevas paginas, medidas DAX, mejoras visuales y documentacion del proceso.
+Se verifican claves, relaciones, saldos y reservas. Esperado: **61.276 unidades físicas**, **56.430 disponibles** y **109.630.923,09 UM**. Detalles en `data/prepared/manifest.json`.
 
-## Fuente de datos
-
-El proyecto contempla la descarga de datos desde la competencia `inventory-optimization` de Kaggle mediante KaggleHub.
-
-Para descargar los archivos localmente:
-
-```bash
-pip install -r requirements.txt
-python scripts/download_inventory_data.py
-```
-
-Los archivos descargados se guardan en `data/raw/inventory-optimization/`. Esa carpeta esta excluida del control de versiones para evitar subir datos externos o archivos pesados al repositorio.
+Tecnologías: Power BI Desktop, Power Query, DAX, TMDL, PBIR, Python estándar y Git.

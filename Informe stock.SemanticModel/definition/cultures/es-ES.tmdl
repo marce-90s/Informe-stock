@@ -199,19 +199,7 @@ cultureInfo es-ES
 			          "ConceptualProperty": "type"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Tipo Workspace": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "medidas_dax.total_usuarios_x_grupo": {
 			      "Definition": {
@@ -220,19 +208,7 @@ cultureInfo es-ES
 			          "ConceptualProperty": "Total Usuarios x Grupo"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Total Usuarios": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    }
 			  },
 			  "Relationships": {
@@ -640,4 +616,3 @@ cultureInfo es-ES
 			  }
 			}
 		contentType: json
-

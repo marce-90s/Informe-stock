@@ -1,0 +1,47 @@
+table Region
+	lineageTag: 8f0a9a48-1535-4c79-85c0-66ddad132e87
+
+	column RegionID
+		dataType: int64
+		lineageTag: 2c1177c2-6d15-459c-889b-8e3654ac9d98
+		summarizeBy: none
+		sourceColumn: RegionID
+
+	column RegionName
+		dataType: string
+		lineageTag: dc852c08-ae5f-4f5c-abd8-2d6499b39cf4
+		summarizeBy: none
+		sourceColumn: RegionName
+
+	column CountryName
+		dataType: string
+		lineageTag: 6457a6df-528a-4002-8303-b1bed3f1645a
+		summarizeBy: none
+		sourceColumn: CountryName
+
+	column State
+		dataType: string
+		lineageTag: d6f30d03-049c-45cd-a172-5b6acd32437c
+		summarizeBy: none
+		sourceColumn: State
+
+	column City
+		dataType: string
+		lineageTag: 3b4a6860-24d3-4ee7-818f-144da5558869
+		summarizeBy: none
+		sourceColumn: City
+
+	column PostalCode
+		dataType: string
+		lineageTag: e52bc988-2139-49f4-b41a-08fdb4c0aa5a
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+	partition Region = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "/Region.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"RegionID", Int64.Type}, {"RegionName", type text}, {"CountryName", type text}, {"State", type text}, {"City", type text}, {"PostalCode", type text}}, "en-US")
+				in Typed

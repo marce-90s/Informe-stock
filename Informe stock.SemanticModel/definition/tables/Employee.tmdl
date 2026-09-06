@@ -1,0 +1,50 @@
+table Employee
+	lineageTag: a65a87b8-c4f8-49f1-a95f-52f82c905b83
+
+	column EmployeeID
+		dataType: int64
+		lineageTag: 3f682fdf-db04-46b0-8193-04cc17031344
+		summarizeBy: none
+		sourceColumn: EmployeeID
+
+	column EmployeeName
+		dataType: string
+		lineageTag: f947da5f-9352-405b-a1f3-ec04003b7446
+		summarizeBy: none
+		sourceColumn: EmployeeName
+
+	column EmployeeHireDate
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: b0ccb328-4994-436b-b807-35a69469ae8b
+		summarizeBy: none
+		sourceColumn: EmployeeHireDate
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EmployeeJobTitle
+		dataType: string
+		lineageTag: 0a7703f7-7436-4b55-8004-797a62a7a074
+		summarizeBy: none
+		sourceColumn: EmployeeJobTitle
+
+	column WarehouseID
+		dataType: int64
+		lineageTag: 938fe23b-db71-48aa-84a5-5a2c11fbf773
+		summarizeBy: none
+		sourceColumn: WarehouseID
+
+	column SourceWarehouseID
+		dataType: int64
+		lineageTag: 24ef316c-16bc-4c54-9631-eddf30a7c6aa
+		summarizeBy: none
+		sourceColumn: SourceWarehouseID
+
+	partition Employee = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "/Employee.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"EmployeeID", Int64.Type}, {"EmployeeName", type text}, {"EmployeeHireDate", type date}, {"EmployeeJobTitle", type text}, {"WarehouseID", Int64.Type}, {"SourceWarehouseID", Int64.Type}}, "en-US")
+				in Typed

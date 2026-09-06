@@ -1,0 +1,36 @@
+{
+  "seed": 28092017,
+  "simulation_start": "2017-01-01",
+  "cutoff": "2017-12-31",
+  "rows": {
+    "Customer": 400,
+    "Employee": 400,
+    "Orders": 400,
+    "OrderDetails": 400,
+    "Product": 400,
+    "Region": 9,
+    "Warehouse": 9,
+    "WarehouseMapping": 400,
+    "InventoryMovements": 307802,
+    "InventoryMonthly": 14400,
+    "InventoryCurrent": 1200,
+    "InventoryPolicy": 1200,
+    "Calendario Base": 1826
+  },
+  "source_sha256": {
+    "Customer.csv": "fd5d8d5e425eaa28c03a1fb75a98ee26eccab62ea3e43c500b3a8f54a6a19415",
+    "Employee.csv": "ae3b0600121e0325c8abcbe84a1b7e40a9ee1bf3a71f244f2f347acb54d9fe58",
+    "OrderDetails.csv": "a1fc2280b7144f96ccfa82b448df3c9fffb1662e64f6d6e855713d2903694c15",
+    "Orders.csv": "736ef2355e782349b04ac9605c09329ea06529e262c2cdf4e3a9c0e20345ce52",
+    "Product.csv": "d79900af86159ac238bf7a478cfef79c8138c1879994e48f160f8f0e6b8be5da",
+    "Region.csv": "14780c1d76a43f4d6d0dc5450fe33372a4d524fa7e9c5cc9eff5fab71b955088",
+    "Warehouse.csv": "d2b5d41cfaec69d2152f55a0aa796026a23f33a6bff81c31c377bc45711128c2"
+  },
+  "totals": {
+    "on_hand": 61276,
+    "reserved": 4846,
+    "available": 56430,
+    "inventory_value": 109630923.09
+  },
+  "validation": "passed"
+}

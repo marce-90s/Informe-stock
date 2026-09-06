@@ -1,0 +1,2 @@
+expression DataRoot = "C:/Users/mnunez/OneDrive - X-28/Escritorio/Repos/Personal/Informe stock/data/prepared" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 2a7150a5-3c7f-401d-bb35-906843055deb

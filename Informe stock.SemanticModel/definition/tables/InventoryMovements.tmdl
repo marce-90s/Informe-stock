@@ -1,0 +1,62 @@
+table InventoryMovements
+	lineageTag: 7961af5d-9dae-4707-8059-323e895db57c
+
+	column MovementID
+		dataType: int64
+		lineageTag: 6cdb503b-fea1-4e3a-9068-b69419b16654
+		summarizeBy: none
+		sourceColumn: MovementID
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 8e51a1d2-02c9-459b-a380-a0ebd7318988
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ProductID
+		dataType: string
+		lineageTag: 427517dc-b5eb-40a5-9585-f17fc3b9d7f1
+		summarizeBy: none
+		sourceColumn: ProductID
+
+	column WarehouseID
+		dataType: int64
+		lineageTag: c2cdab49-e7ab-4a48-90df-97f1a78cd559
+		summarizeBy: none
+		sourceColumn: WarehouseID
+
+	column MovementType
+		dataType: string
+		lineageTag: 36a5b6be-001b-4f12-8d35-3191ab5add9b
+		summarizeBy: none
+		sourceColumn: MovementType
+
+	column Quantity
+		dataType: int64
+		lineageTag: f7a1200f-2f81-49f6-8d7a-c988d08a60b1
+		summarizeBy: none
+		sourceColumn: Quantity
+
+	column UnitCost
+		dataType: decimal
+		lineageTag: a8d21bb7-e9eb-4156-a364-1a256ffebdee
+		summarizeBy: none
+		sourceColumn: UnitCost
+
+	column IsSimulated
+		dataType: string
+		lineageTag: 25c95695-1dac-48bc-8c26-ac094791cbaa
+		summarizeBy: none
+		sourceColumn: IsSimulated
+
+	partition InventoryMovements = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "/InventoryMovements.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"MovementID", Int64.Type}, {"Date", type date}, {"ProductID", type text}, {"WarehouseID", Int64.Type}, {"MovementType", type text}, {"Quantity", Int64.Type}, {"UnitCost", Currency.Type}, {"IsSimulated", type text}}, "en-US")
+				in Typed

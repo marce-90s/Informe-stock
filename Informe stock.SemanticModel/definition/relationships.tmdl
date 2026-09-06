@@ -1,5 +1,67 @@
-relationship 4a913a7d-a60b-4966-944d-32f707a617ad
-	joinOnDateBehavior: datePartOnly
-	fromColumn: 'Calendario Base'.Date
-	toColumn: LocalDateTable_2b8160cc-8579-47cb-8df0-2e5c058d65f6.Date
+relationship rel_00
+	fromColumn: Orders.CustomerID
+	toColumn: Customer.CustomerID
 
+relationship rel_01
+	fromColumn: OrderDetails.OrderID
+	toColumn: Orders.OrderID
+
+relationship rel_02
+	fromColumn: OrderDetails.ProductID
+	toColumn: Product.ProductID
+
+relationship rel_03
+	fromColumn: Orders.OrderDate
+	toColumn: 'Calendario Base'.Date
+
+relationship rel_04
+	fromColumn: Warehouse.RegionID
+	toColumn: Region.RegionID
+
+relationship rel_05
+	fromColumn: Employee.WarehouseID
+	toColumn: Warehouse.WarehouseID
+
+relationship rel_06
+	fromColumn: WarehouseMapping.WarehouseID
+	toColumn: Warehouse.WarehouseID
+
+relationship rel_07
+	fromColumn: InventoryMovements.ProductID
+	toColumn: Product.ProductID
+
+relationship rel_08
+	fromColumn: InventoryMovements.WarehouseID
+	toColumn: Warehouse.WarehouseID
+
+relationship rel_09
+	fromColumn: InventoryMonthly.ProductID
+	toColumn: Product.ProductID
+
+relationship rel_10
+	fromColumn: InventoryMonthly.WarehouseID
+	toColumn: Warehouse.WarehouseID
+
+relationship rel_11
+	fromColumn: InventoryCurrent.ProductID
+	toColumn: Product.ProductID
+
+relationship rel_12
+	fromColumn: InventoryCurrent.WarehouseID
+	toColumn: Warehouse.WarehouseID
+
+relationship rel_13
+	fromColumn: InventoryPolicy.ProductID
+	toColumn: Product.ProductID
+
+relationship rel_14
+	fromColumn: InventoryPolicy.WarehouseID
+	toColumn: Warehouse.WarehouseID
+
+relationship rel_15
+	fromColumn: InventoryMovements.Date
+	toColumn: 'Calendario Base'.Date
+
+relationship rel_16
+	fromColumn: InventoryMonthly.Date
+	toColumn: 'Calendario Base'.Date

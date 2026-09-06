@@ -1,0 +1,24 @@
+table WarehouseMapping
+	isHidden
+	lineageTag: e9f406a2-1d19-4153-bf48-8304e62d940b
+
+	column SourceWarehouseID
+		dataType: int64
+		lineageTag: 6409707a-ccc2-40b9-8ed5-1bd3f13522a8
+		summarizeBy: none
+		sourceColumn: SourceWarehouseID
+
+	column WarehouseID
+		dataType: int64
+		lineageTag: e079273f-de79-44ea-b24c-e7a7e3caa49c
+		summarizeBy: none
+		sourceColumn: WarehouseID
+
+	partition WarehouseMapping = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "/WarehouseMapping.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"SourceWarehouseID", Int64.Type}, {"WarehouseID", Int64.Type}}, "en-US")
+				in Typed

@@ -1,0 +1,53 @@
+table Product
+	lineageTag: f9fa19b9-f1c1-47e1-8517-17fe47129a11
+
+	column ProductID
+		dataType: string
+		lineageTag: 43a2c1ec-930e-41a6-b4b5-34c84e6af796
+		summarizeBy: none
+		sourceColumn: ProductID
+
+	column ProductName
+		dataType: string
+		lineageTag: 7c40e4ff-2478-44e6-a79b-9dc76079201f
+		summarizeBy: none
+		sourceColumn: ProductName
+
+	column CategoryName
+		dataType: string
+		lineageTag: d7a42e2a-19f8-4d52-a918-2fb20fa135bc
+		summarizeBy: none
+		sourceColumn: CategoryName
+
+	column ProductDescription
+		dataType: string
+		lineageTag: ac81f411-6034-4012-9f1a-0257c559e584
+		summarizeBy: none
+		sourceColumn: ProductDescription
+
+	column ProductStandardCost
+		dataType: decimal
+		lineageTag: 4d3404a3-8c58-44fe-85ac-b2f8c84b2c7e
+		summarizeBy: none
+		sourceColumn: ProductStandardCost
+
+	column ProductListPrice
+		dataType: decimal
+		lineageTag: bb71a1c6-3b12-4f31-a09e-1780ab5d9e7b
+		summarizeBy: none
+		sourceColumn: ProductListPrice
+
+	column Profit
+		dataType: decimal
+		lineageTag: 62b657bf-7f5e-4937-8bdf-2345868c39cc
+		summarizeBy: none
+		sourceColumn: Profit
+
+	partition Product = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "/Product.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"ProductID", type text}, {"ProductName", type text}, {"CategoryName", type text}, {"ProductDescription", type text}, {"ProductStandardCost", Currency.Type}, {"ProductListPrice", Currency.Type}, {"Profit", Currency.Type}}, "en-US")
+				in Typed

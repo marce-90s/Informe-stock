@@ -1,7 +1,10 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.0.0/schema.json",
   "pageOrder": [
+    "stock_overview",
+    "stock_evolution",
+    "stock_orders",
     "3c978ae384d763d39147"
   ],
-  "activePageName": "3c978ae384d763d39147"
+  "activePageName": "stock_evolution"
 }

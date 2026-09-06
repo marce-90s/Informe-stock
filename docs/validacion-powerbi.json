@@ -1,0 +1,256 @@
+﻿{
+    "status":  "passed",
+    "tables":  15,
+    "relationships":  17,
+    "totals":  {
+                   "[Fisico]":  61276,
+                   "[Reservado]":  4846,
+                   "[Disponible]":  56430,
+                   "[Valor]":  109630923.09,
+                   "[Conciliacion]":  0,
+                   "[Cierre]":  61276,
+                   "[Movimientos]":  307802
+               },
+    "row_counts":  [
+                       {
+                           "Table":  "Customer",
+                           "Rows":  400
+                       },
+                       {
+                           "Table":  "Employee",
+                           "Rows":  400
+                       },
+                       {
+                           "Table":  "Orders",
+                           "Rows":  400
+                       },
+                       {
+                           "Table":  "OrderDetails",
+                           "Rows":  400
+                       },
+                       {
+                           "Table":  "Product",
+                           "Rows":  400
+                       },
+                       {
+                           "Table":  "Region",
+                           "Rows":  9
+                       },
+                       {
+                           "Table":  "Warehouse",
+                           "Rows":  9
+                       },
+                       {
+                           "Table":  "WarehouseMapping",
+                           "Rows":  400
+                       },
+                       {
+                           "Table":  "InventoryMovements",
+                           "Rows":  307802
+                       },
+                       {
+                           "Table":  "InventoryMonthly",
+                           "Rows":  14400
+                       },
+                       {
+                           "Table":  "InventoryCurrent",
+                           "Rows":  1200
+                       },
+                       {
+                           "Table":  "InventoryPolicy",
+                           "Rows":  1200
+                       },
+                       {
+                           "Table":  "Calendario Base",
+                           "Rows":  1826
+                       },
+                       {
+                           "Table":  "Medidas DAX",
+                           "Rows":  null
+                       },
+                       {
+                           "Table":  "Actualizado al",
+                           "Rows":  1
+                       }
+                   ],
+    "measures":  [
+                     {
+                         "Measure":  "Stock fisico",
+                         "Value":  61276
+                     },
+                     {
+                         "Measure":  "Stock reservado",
+                         "Value":  4846
+                     },
+                     {
+                         "Measure":  "Stock disponible",
+                         "Value":  56430
+                     },
+                     {
+                         "Measure":  "Valor inventario UM",
+                         "Value":  109630923.09
+                     },
+                     {
+                         "Measure":  "SKU activos",
+                         "Value":  400
+                     },
+                     {
+                         "Measure":  "Posiciones sin stock",
+                         "Value":  236
+                     },
+                     {
+                         "Measure":  "Posiciones bajo minimo",
+                         "Value":  475
+                     },
+                     {
+                         "Measure":  "Unidades a reponer",
+                         "Value":  55233
+                     },
+                     {
+                         "Measure":  "Cobertura dias",
+                         "Value":  16.777499182383082
+                     },
+                     {
+                         "Measure":  "Saldo movimientos",
+                         "Value":  61276
+                     },
+                     {
+                         "Measure":  "Salidas simuladas",
+                         "Value":  1233448
+                     },
+                     {
+                         "Measure":  "Entradas simuladas",
+                         "Value":  1148627
+                     },
+                     {
+                         "Measure":  "Stock cierre mensual",
+                         "Value":  61276
+                     },
+                     {
+                         "Measure":  "Control conciliacion",
+                         "Value":  0
+                     },
+                     {
+                         "Measure":  "Pedidos historicos",
+                         "Value":  400
+                     },
+                     {
+                         "Measure":  "Unidades enviadas historicas",
+                         "Value":  16827
+                     },
+                     {
+                         "Measure":  "Importe enviado historico UM",
+                         "Value":  14037758.6
+                     }
+                 ],
+    "monthly":  [
+                    {
+                        "Calendario Base[YearMonth]":  "2017-01",
+                        "[Stock]":  116024
+                    },
+                    {
+                        "Calendario Base[YearMonth]":  "2017-02",
+                        "[Stock]":  98684
+                    },
+                    {
+                        "Calendario Base[YearMonth]":  "2017-03",
+                        "[Stock]":  71913
+                    },
+                    {
+                        "Calendario Base[YearMonth]":  "2017-04",
+                        "[Stock]":  64913
+                    },
+                    {
+                        "Calendario Base[YearMonth]":  "2017-05",
+                        "[Stock]":  76690
+                    },
+                    {
+                        "Calendario Base[YearMonth]":  "2017-06",
+                        "[Stock]":  69877
+                    },
+                    {
+                        "Calendario Base[YearMonth]":  "2017-07",
+                        "[Stock]":  82116
+                    },
+                    {
+                        "Calendario Base[YearMonth]":  "2017-08",
+                        "[Stock]":  71742
+                    },
+                    {
+                        "Calendario Base[YearMonth]":  "2017-09",
+                        "[Stock]":  65874
+                    },
+                    {
+                        "Calendario Base[YearMonth]":  "2017-10",
+                        "[Stock]":  78360
+                    },
+                    {
+                        "Calendario Base[YearMonth]":  "2017-11",
+                        "[Stock]":  72412
+                    },
+                    {
+                        "Calendario Base[YearMonth]":  "2017-12",
+                        "[Stock]":  61276
+                    }
+                ],
+    "warehouse_reconciliation":  [
+                                     {
+                                         "Warehouse[WarehouseName]":  "Southlake Texas",
+                                         "[Control]":  0
+                                     },
+                                     {
+                                         "Warehouse[WarehouseName]":  "San Francisco",
+                                         "[Control]":  0
+                                     },
+                                     {
+                                         "Warehouse[WarehouseName]":  "New Jersy",
+                                         "[Control]":  0
+                                     },
+                                     {
+                                         "Warehouse[WarehouseName]":  "Seattle Washington",
+                                         "[Control]":  0
+                                     },
+                                     {
+                                         "Warehouse[WarehouseName]":  "Toronto",
+                                         "[Control]":  0
+                                     },
+                                     {
+                                         "Warehouse[WarehouseName]":  "Sydney",
+                                         "[Control]":  0
+                                     },
+                                     {
+                                         "Warehouse[WarehouseName]":  "Mexico City",
+                                         "[Control]":  0
+                                     },
+                                     {
+                                         "Warehouse[WarehouseName]":  "Beijing",
+                                         "[Control]":  0
+                                     },
+                                     {
+                                         "Warehouse[WarehouseName]":  "Bombay",
+                                         "[Control]":  0
+                                     }
+                                 ],
+    "category_reconciliation":  [
+                                    {
+                                        "Product[CategoryName]":  "CPU",
+                                        "[Control]":  0
+                                    },
+                                    {
+                                        "Product[CategoryName]":  "Video Card",
+                                        "[Control]":  0
+                                    },
+                                    {
+                                        "Product[CategoryName]":  "Storage",
+                                        "[Control]":  0
+                                    },
+                                    {
+                                        "Product[CategoryName]":  "Mother Board",
+                                        "[Control]":  0
+                                    },
+                                    {
+                                        "Product[CategoryName]":  "RAM",
+                                        "[Control]":  0
+                                    }
+                                ]
+}

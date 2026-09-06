@@ -1,0 +1,32 @@
+table Orders
+	lineageTag: f5543496-1281-4cf6-a5ea-ef8f02397109
+
+	column OrderID
+		dataType: int64
+		lineageTag: 6b12b632-9c53-4629-a7e5-337c3d30c871
+		summarizeBy: none
+		sourceColumn: OrderID
+
+	column OrderDate
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: ddb6db43-2e42-418f-8503-85869bde6cd9
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CustomerID
+		dataType: int64
+		lineageTag: a4d07f92-7fae-4908-b0d8-e19319dfc249
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+	partition Orders = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "/Orders.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"OrderID", Int64.Type}, {"OrderDate", type date}, {"CustomerID", Int64.Type}}, "en-US")
+				in Typed

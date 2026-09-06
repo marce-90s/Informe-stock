@@ -1,0 +1,86 @@
+table InventoryCurrent
+	lineageTag: c2c9ea29-330b-4a9a-941a-34d053e9c50f
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: c851fa74-6fc9-479e-a642-02fe372957b3
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ProductID
+		dataType: string
+		lineageTag: d669846a-cf9f-4f3c-8550-9b1beec2509c
+		summarizeBy: none
+		sourceColumn: ProductID
+
+	column WarehouseID
+		dataType: int64
+		lineageTag: da7aa5d5-5ade-42f7-b4e7-23b6e2c08540
+		summarizeBy: none
+		sourceColumn: WarehouseID
+
+	column OnHand
+		dataType: int64
+		lineageTag: ca419f65-a30a-4805-9203-fd63ba41c418
+		summarizeBy: none
+		sourceColumn: OnHand
+
+	column Reserved
+		dataType: int64
+		lineageTag: 98a3d342-3f9e-4530-8654-56224d2e6003
+		summarizeBy: none
+		sourceColumn: Reserved
+
+	column Available
+		dataType: int64
+		lineageTag: 0b05fd96-375c-4253-a94b-5b8823087d8f
+		summarizeBy: none
+		sourceColumn: Available
+
+	column MinimumStock
+		dataType: int64
+		lineageTag: cce4a972-0cea-4017-8169-83b92aaa157b
+		summarizeBy: none
+		sourceColumn: MinimumStock
+
+	column TargetStock
+		dataType: int64
+		lineageTag: c9bdcad7-3303-4b57-be57-3eadf65e8f3f
+		summarizeBy: none
+		sourceColumn: TargetStock
+
+	column ReorderQuantity
+		dataType: int64
+		lineageTag: 2c6bcb44-2e73-4470-84de-b93ae5e7d93a
+		summarizeBy: none
+		sourceColumn: ReorderQuantity
+
+	column IssuesLast30Days
+		dataType: int64
+		lineageTag: c73999a3-13ef-49ad-8f8b-bc4963dfd7e8
+		summarizeBy: none
+		sourceColumn: IssuesLast30Days
+
+	column UnitCost
+		dataType: decimal
+		lineageTag: cc44ca74-03b5-48c6-8d1e-19e4775eea3e
+		summarizeBy: none
+		sourceColumn: UnitCost
+
+	column StockStatus
+		dataType: string
+		lineageTag: 2cb1b596-9537-46db-8dee-1e681de65c06
+		summarizeBy: none
+		sourceColumn: StockStatus
+
+	partition InventoryCurrent = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "/InventoryCurrent.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"Date", type date}, {"ProductID", type text}, {"WarehouseID", Int64.Type}, {"OnHand", Int64.Type}, {"Reserved", Int64.Type}, {"Available", Int64.Type}, {"MinimumStock", Int64.Type}, {"TargetStock", Int64.Type}, {"ReorderQuantity", Int64.Type}, {"IssuesLast30Days", Int64.Type}, {"UnitCost", Currency.Type}, {"StockStatus", type text}}, "en-US")
+				in Typed

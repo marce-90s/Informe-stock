@@ -1,0 +1,47 @@
+table OrderDetails
+	lineageTag: 811a5be4-7e2b-43f9-810b-7f6945cd37ca
+
+	column OrderDetailsID
+		dataType: int64
+		lineageTag: b1e669f4-ca95-4b33-beee-31a6865ce2f4
+		summarizeBy: none
+		sourceColumn: OrderDetailsID
+
+	column ProductID
+		dataType: string
+		lineageTag: f2e9afb0-a262-4d70-b90c-59b525cc0198
+		summarizeBy: none
+		sourceColumn: ProductID
+
+	column OrderItemQuantity
+		dataType: int64
+		lineageTag: d1a8fe71-388e-480f-9088-8175d5931171
+		summarizeBy: none
+		sourceColumn: OrderItemQuantity
+
+	column PerUnitPrice
+		dataType: decimal
+		lineageTag: 7a96a82c-c37b-4046-a5ab-0f532fe8b885
+		summarizeBy: none
+		sourceColumn: PerUnitPrice
+
+	column OrderStatus
+		dataType: string
+		lineageTag: 0956be5b-80e2-45cc-9fa7-0b199b2b70a7
+		summarizeBy: none
+		sourceColumn: OrderStatus
+
+	column OrderID
+		dataType: int64
+		lineageTag: 3b431950-b8cc-4c5d-899b-8701882f5d39
+		summarizeBy: none
+		sourceColumn: OrderID
+
+	partition OrderDetails = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "/OrderDetails.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"OrderDetailsID", Int64.Type}, {"ProductID", type text}, {"OrderItemQuantity", Int64.Type}, {"PerUnitPrice", Currency.Type}, {"OrderStatus", type text}, {"OrderID", Int64.Type}}, "en-US")
+				in Typed

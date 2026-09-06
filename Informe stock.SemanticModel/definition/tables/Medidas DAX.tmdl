@@ -1,19 +1,82 @@
 table 'Medidas DAX'
-	lineageTag: 99a84b9c-54a4-45a3-b1be-7f2b4acbfeb5
+	lineageTag: d98405a6-512c-42c8-a334-b45c41bd68a1
 
-	measure 'Total Registros' = COUNTROWS('Calendario Base')
-		formatString: 0
-		lineageTag: 90df3f43-af67-4d44-9b94-1dc061cc893a
+	measure 'Stock fisico' = SUM(InventoryCurrent[OnHand])
+		formatString: #,##0
+		lineageTag: b1e75125-8448-44a6-8808-6c83645af74a
+
+	measure 'Stock reservado' = SUM(InventoryCurrent[Reserved])
+		formatString: #,##0
+		lineageTag: 6b340b82-231c-4036-8bee-5612c2fedbd7
+
+	measure 'Stock disponible' = SUM(InventoryCurrent[Available])
+		formatString: #,##0
+		lineageTag: 1b06aabb-a93c-4de0-81f2-c8f806a2887c
+
+	measure 'Valor inventario UM' = SUMX(InventoryCurrent, InventoryCurrent[OnHand] * InventoryCurrent[UnitCost])
+		formatString: #,##0.00
+		lineageTag: 54d2e31e-f1ab-4531-8209-7c2ab825f681
+
+	measure 'SKU activos' = DISTINCTCOUNT(InventoryCurrent[ProductID])
+		formatString: #,##0
+		lineageTag: fa6f80de-20d3-4a0a-b9b7-c405859774c6
+
+	measure 'Posiciones sin stock' = CALCULATE(COUNTROWS(InventoryCurrent), KEEPFILTERS(InventoryCurrent[Available] = 0))
+		formatString: #,##0
+		lineageTag: ceca4152-ae33-45c3-83ba-6ba163e836c3
+
+	measure 'Posiciones bajo minimo' = COUNTROWS(FILTER(InventoryCurrent, InventoryCurrent[Available] < InventoryCurrent[MinimumStock]))
+		formatString: #,##0
+		lineageTag: 32608215-e6bf-4aa0-ab61-8c81f2aae1a9
+
+	measure 'Unidades a reponer' = SUM(InventoryCurrent[ReorderQuantity])
+		formatString: #,##0
+		lineageTag: cf50b48e-085a-4a61-9b11-304d267cbc8d
+
+	measure 'Cobertura dias' = DIVIDE([Stock disponible], DIVIDE(SUM(InventoryCurrent[IssuesLast30Days]), 30))
+		formatString: #,##0.0
+		lineageTag: 28c381bd-b637-4d57-a9ee-ea295f69e625
+
+	measure 'Saldo movimientos' = SUM(InventoryMovements[Quantity])
+		formatString: #,##0
+		lineageTag: c4ff91e7-d649-44f8-90d1-00c768806c8e
+
+	measure 'Salidas simuladas' = -CALCULATE(SUM(InventoryMovements[Quantity]), InventoryMovements[MovementType] = "Issue")
+		formatString: #,##0
+		lineageTag: 3a637840-d622-4f02-90d8-46922013cc1e
+
+	measure 'Entradas simuladas' = CALCULATE(SUM(InventoryMovements[Quantity]), InventoryMovements[MovementType] = "Receipt")
+		formatString: #,##0
+		lineageTag: 73142495-6c3a-45de-9b0f-ade51ba32d52
+
+	measure 'Stock cierre mensual' = VAR Corte = MAX(InventoryMonthly[Date]) RETURN CALCULATE(SUM(InventoryMonthly[OnHand]), KEEPFILTERS(InventoryMonthly[Date] = Corte))
+		formatString: #,##0
+		lineageTag: 5b802722-6fa4-4037-ba16-b10a73bf2408
+
+	measure 'Control conciliacion' = [Stock fisico] - CALCULATE([Saldo movimientos], REMOVEFILTERS('Calendario Base'), REMOVEFILTERS(InventoryMovements[MovementType]))
+		formatString: #,##0
+		lineageTag: 2a7a8d9f-afb5-4c79-a09d-39d9643c8440
+
+	measure 'Pedidos historicos' = COUNTROWS(Orders)
+		formatString: #,##0
+		lineageTag: 994bb46d-d66a-477a-b9d0-ec63a9e6caa5
+
+	measure 'Unidades enviadas historicas' = CALCULATE(SUM(OrderDetails[OrderItemQuantity]), OrderDetails[OrderStatus] = "Shipped")
+		formatString: #,##0
+		lineageTag: a209481e-4eae-4adc-b1af-6d9992f51dae
+
+	measure 'Importe enviado historico UM' = CALCULATE(SUMX(OrderDetails, OrderDetails[OrderItemQuantity] * OrderDetails[PerUnitPrice]), OrderDetails[OrderStatus] = "Shipped")
+		formatString: #,##0.00
+		lineageTag: f1fc5f9e-9e2b-452e-9a53-8c3de2bbeaae
+
+	column Placeholder
+		dataType: string
+		lineageTag: a2c5305f-9382-4a73-9096-23bb1131abdd
+		summarizeBy: none
+		sourceColumn: Placeholder
+
+		annotation SummarizationSetBy = Automatic
 
 	partition 'Medidas DAX' = m
 		mode: import
-		source =
-				let
-				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
-				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
-				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
-				in
-				    #"Columnas quitadas"
-
-	annotation PBI_ResultType = Table
-
+		source = #table(type table [Placeholder = text], {})

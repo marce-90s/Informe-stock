@@ -1,22 +1,31 @@
 model Model
 	culture: es-ES
 	defaultPowerBIDataSourceVersion: powerBI_V3
-	sourceQueryCulture: es-AR
+	sourceQueryCulture: en-US
 	dataAccessOptions
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["Medidas DAX","Actualizado al"]
+annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation __PBI_TimeIntelligenceEnabled = 1
+annotation PBI_QueryOrder = ["Customer","Employee","Orders","OrderDetails","Product","Region","Warehouse","WarehouseMapping","InventoryMovements","InventoryMonthly","InventoryCurrent","InventoryPolicy","Calendario Base","Medidas DAX","Actualizado al","DataRoot"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
+ref table Customer
+ref table Employee
+ref table Orders
+ref table OrderDetails
+ref table Product
+ref table Region
+ref table Warehouse
+ref table WarehouseMapping
+ref table InventoryMovements
+ref table InventoryMonthly
+ref table InventoryCurrent
+ref table InventoryPolicy
+ref table 'Calendario Base'
 ref table 'Medidas DAX'
 ref table 'Actualizado al'
-ref table DateTableTemplate_2a2ffe1a-a7c2-4565-a6d9-b37aa8a24b2e
-ref table 'Calendario Base'
-ref table LocalDateTable_2b8160cc-8579-47cb-8df0-2e5c058d65f6
 
 ref cultureInfo es-ES
-

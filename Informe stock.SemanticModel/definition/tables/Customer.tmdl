@@ -1,0 +1,29 @@
+table Customer
+	lineageTag: a593753c-14c6-467c-addb-53db5a969f2b
+
+	column CustomerID
+		dataType: int64
+		lineageTag: 2655b505-9649-4632-a6eb-8365f80b8aa4
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+	column CustomerName
+		dataType: string
+		lineageTag: d28ed63e-6ec9-4546-84b8-c156f3932b52
+		summarizeBy: none
+		sourceColumn: CustomerName
+
+	column CustomerCreditLimit
+		dataType: int64
+		lineageTag: 989165d7-e340-4eab-bf67-ba106a23579b
+		summarizeBy: none
+		sourceColumn: CustomerCreditLimit
+
+	partition Customer = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "/Customer.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"CustomerID", Int64.Type}, {"CustomerName", type text}, {"CustomerCreditLimit", Int64.Type}}, "en-US")
+				in Typed

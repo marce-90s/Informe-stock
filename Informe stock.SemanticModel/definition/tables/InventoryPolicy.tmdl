@@ -1,0 +1,47 @@
+table InventoryPolicy
+	lineageTag: a3eec651-82e8-468b-9163-fe3aa2ecf65b
+
+	column ProductID
+		dataType: string
+		lineageTag: 476b7b41-c3ab-47f0-b8e0-dccf1fbcc79f
+		summarizeBy: none
+		sourceColumn: ProductID
+
+	column WarehouseID
+		dataType: int64
+		lineageTag: afa5023e-2bf1-4f7c-81a9-73179ec07e4a
+		summarizeBy: none
+		sourceColumn: WarehouseID
+
+	column LeadTimeDays
+		dataType: int64
+		lineageTag: 8a538e4d-7f91-4e2a-ad63-820fd0278c74
+		summarizeBy: none
+		sourceColumn: LeadTimeDays
+
+	column MinimumStock
+		dataType: int64
+		lineageTag: df669259-ea95-4a71-b5bd-610c81faafd2
+		summarizeBy: none
+		sourceColumn: MinimumStock
+
+	column TargetStock
+		dataType: int64
+		lineageTag: 7ac66af2-9e4e-40da-9c88-b8de6deb6422
+		summarizeBy: none
+		sourceColumn: TargetStock
+
+	column Scenario
+		dataType: string
+		lineageTag: c54e1821-b1a1-4e82-a125-2bfc52364588
+		summarizeBy: none
+		sourceColumn: Scenario
+
+	partition InventoryPolicy = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "/InventoryPolicy.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"ProductID", type text}, {"WarehouseID", Int64.Type}, {"LeadTimeDays", Int64.Type}, {"MinimumStock", Int64.Type}, {"TargetStock", Int64.Type}, {"Scenario", type text}}, "en-US")
+				in Typed
