@@ -12,6 +12,16 @@ Caso de inventario **simulado** (catálogo y pedidos de ejemplo). Corte: **31/12
 | 02 · Movimientos | Entradas y salidas simuladas, saldo y conciliación contra el stock físico |
 | 03 · Pedidos originales | Pedidos históricos del dataset de origen, analizados por separado |
 
+## Capturas
+
+Vistas de las tres páginas (o abrir el [PDF](docs/Informe-stock.pdf) para el detalle):
+
+<!-- Al dejar los PNG en docs/img/, descomentar estas líneas:
+![01 · Stock al cierre](docs/img/01-stock-al-cierre.png)
+![02 · Movimientos](docs/img/02-movimientos.png)
+![03 · Pedidos originales](docs/img/03-pedidos-originales.png)
+-->
+
 ## Contexto
 
 El dataset trae inventario a una fecha de corte y pedidos históricos que no cuadran con ese inventario. El informe los trata como dos dominios distintos: fotografía de stock por un lado, historial de pedidos por otro, sin mezclarlos en las mismas métricas.
@@ -57,3 +67,7 @@ Se verifican claves, relaciones, saldos y reservas. Valores esperados al corte: 
 ## Tecnologías
 
 Power BI Desktop, Power Query, DAX, TMDL, PBIR, Python (librería estándar) y Git.
+
+## Licencia
+
+Código y documentación bajo licencia [MIT](LICENSE). No cubre los CSV de `archive/` ni `data/`: su procedencia y licencia no están verificadas (ver **Datos**).

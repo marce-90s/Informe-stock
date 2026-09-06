@@ -1,0 +1,18 @@
+# Store text with LF in the repo, check out native on each platform
+* text=auto
+
+# Power BI / Fabric sources are text
+*.tmdl  text
+*.pbip  text
+*.pbir  text
+*.pbism text
+*.json  text
+*.md    text
+*.py    text
+*.csv   text
+
+# Binary assets
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.abf   binary
