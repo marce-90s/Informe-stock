@@ -60,6 +60,7 @@ Se verifican claves, relaciones, saldos y reservas. Valores esperados al corte: 
 - `data/prepared/` — datos normalizados, simulación y manifiesto de validación.
 - `scripts/build_inventory.py` — simulación determinista, controles y modelo TMDL.
 - `scripts/build_report.py` — medidas DAX y páginas PBIR.
+- `scripts/validate_model.ps1`, `scripts/validate_live_model.ps1` — controles sobre el modelo publicado.
 - `Informe stock.SemanticModel/` — tablas, parámetro y relaciones.
 - `Informe stock.Report/` — páginas, visuales y tema.
 - [`docs/inventario-simulado.md`](docs/inventario-simulado.md) — diseño, supuestos y diccionario de datos.
