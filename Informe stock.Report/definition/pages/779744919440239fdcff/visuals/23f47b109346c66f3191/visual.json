@@ -1,0 +1,188 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "23f47b109346c66f3191",
+  "position": {
+    "x": 119.04830569574622,
+    "y": 187.33958183129056,
+    "z": 8002,
+    "height": 522.33597692862293,
+    "width": 597.08723864455669,
+    "tabOrder": 8002
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "OrderDetails"
+                    }
+                  },
+                  "Property": "OrderID"
+                }
+              },
+              "queryRef": "OrderDetails.OrderID",
+              "nativeQueryRef": "OrderID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "OrderDetails"
+                    }
+                  },
+                  "Property": "ProductID"
+                }
+              },
+              "queryRef": "OrderDetails.ProductID",
+              "nativeQueryRef": "ProductID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "OrderDetails"
+                    }
+                  },
+                  "Property": "OrderStatus"
+                }
+              },
+              "queryRef": "OrderDetails.OrderStatus",
+              "nativeQueryRef": "OrderStatus"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "OrderDetails"
+                    }
+                  },
+                  "Property": "OrderItemQuantity"
+                }
+              },
+              "queryRef": "OrderDetails.OrderItemQuantity",
+              "nativeQueryRef": "OrderItemQuantity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "OrderDetails"
+                    }
+                  },
+                  "Property": "PerUnitPrice"
+                }
+              },
+              "queryRef": "OrderDetails.PerUnitPrice",
+              "nativeQueryRef": "PerUnitPrice"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "104.37707402955719D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "OrderDetails.ProductID"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "69.22855082912761D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "OrderDetails.OrderID"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "113.53137057416942D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "OrderDetails.OrderStatus"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "139.07426002030397D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "OrderDetails.OrderItemQuantity"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Detalle original'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

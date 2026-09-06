@@ -45,3 +45,4 @@ table OrderDetails
 				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    Typed = Table.TransformColumnTypes(Headers, {{"OrderDetailsID", Int64.Type}, {"ProductID", type text}, {"OrderItemQuantity", Int64.Type}, {"PerUnitPrice", Currency.Type}, {"OrderStatus", type text}, {"OrderID", Int64.Type}}, "en-US")
 				in Typed
+

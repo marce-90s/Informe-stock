@@ -1,7 +1,7 @@
 table 'Medidas DAX'
 	lineageTag: d98405a6-512c-42c8-a334-b45c41bd68a1
 
-	measure 'Stock fisico' = SUM(InventoryCurrent[OnHand])
+	measure 'Stock físico' = SUM(InventoryCurrent[OnHand])
 		formatString: #,##0
 		displayFolder: Stock actual
 		lineageTag: b1e75125-8448-44a6-8808-6c83645af74a
@@ -17,7 +17,7 @@ table 'Medidas DAX'
 		lineageTag: 1b06aabb-a93c-4de0-81f2-c8f806a2887c
 
 	measure 'Valor inventario UM' = SUMX(InventoryCurrent, InventoryCurrent[OnHand] * InventoryCurrent[UnitCost])
-		formatString: #,##0.00
+		formatString: 0
 		displayFolder: Stock actual
 		lineageTag: 54d2e31e-f1ab-4531-8209-7c2ab825f681
 
@@ -66,7 +66,7 @@ table 'Medidas DAX'
 		displayFolder: Cierre mensual
 		lineageTag: 5b802722-6fa4-4037-ba16-b10a73bf2408
 
-	measure 'Control conciliacion' = [Stock fisico] - CALCULATE([Saldo movimientos], REMOVEFILTERS('Calendario Base'), REMOVEFILTERS(InventoryMovements[MovementType]))
+	measure 'Control conciliacion' = [Stock físico] - CALCULATE([Saldo movimientos], REMOVEFILTERS('Calendario Base'), REMOVEFILTERS(InventoryMovements[MovementType]))
 		formatString: #,##0
 		displayFolder: Conciliacion
 		lineageTag: 2a7a8d9f-afb5-4c79-a09d-39d9643c8440

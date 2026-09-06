@@ -51,3 +51,4 @@ table Product
 				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    Typed = Table.TransformColumnTypes(Headers, {{"ProductID", type text}, {"ProductName", type text}, {"CategoryName", type text}, {"ProductDescription", type text}, {"ProductStandardCost", Currency.Type}, {"ProductListPrice", Currency.Type}, {"Profit", Currency.Type}}, "en-US")
 				in Typed
+

@@ -60,3 +60,4 @@ table InventoryMovements
 				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    Typed = Table.TransformColumnTypes(Headers, {{"MovementID", Int64.Type}, {"Date", type date}, {"ProductID", type text}, {"WarehouseID", Int64.Type}, {"MovementType", type text}, {"Quantity", Int64.Type}, {"UnitCost", Currency.Type}, {"IsSimulated", type text}}, "en-US")
 				in Typed
+

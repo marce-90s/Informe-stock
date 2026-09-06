@@ -10,8 +10,8 @@
       "nodes": [
         {
           "location": {
-            "x": 0,
-            "y": 48
+            "x": 1972.2686686386667,
+            "y": 534.13453563533812
           },
           "nodeIndex": "Medidas DAX",
           "nodeLineageTag": "99a84b9c-54a4-45a3-b1be-7f2b4acbfeb5",
@@ -23,8 +23,8 @@
         },
         {
           "location": {
-            "x": 284,
-            "y": 72
+            "x": 2256.2686686386669,
+            "y": 558.13453563533812
           },
           "nodeIndex": "Actualizado al",
           "nodeLineageTag": "810df069-4f8a-4f79-9d92-0fb1afb7b460",
@@ -36,36 +36,23 @@
         },
         {
           "location": {
-            "x": 568,
-            "y": 0
+            "x": 3392.2686686386669,
+            "y": 510.13453563533812
           },
-          "nodeIndex": "AT - Seguimiento",
+          "nodeIndex": "Calendario Base",
           "size": {
-            "height": 248,
+            "height": 200,
             "width": 234
           },
           "zIndex": 0
         },
         {
           "location": {
-            "x": 852,
-            "y": 12
+            "x": 50,
+            "y": 252.25703359824229
           },
-          "nodeIndex": "Datos",
-          "nodeLineageTag": "7283c9a9-e6ae-4ae4-9c0c-a227bf3b9304",
-          "size": {
-            "height": 224,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 1136,
-            "y": 48
-          },
-          "nodeIndex": "Templates",
-          "nodeLineageTag": "0aa023b9-c2e3-4d40-a396-c00fc76219d1",
+          "nodeIndex": "Customer",
+          "nodeLineageTag": "a593753c-14c6-467c-addb-53db5a969f2b",
           "size": {
             "height": 152,
             "width": 234
@@ -74,12 +61,143 @@
         },
         {
           "location": {
-            "x": 1420,
-            "y": 24
+            "x": 1624.0814431865936,
+            "y": 333.94471258290218
           },
-          "nodeIndex": "Calendario Base",
+          "nodeIndex": "Employee",
+          "nodeLineageTag": "a65a87b8-c4f8-49f1-a95f-52f82c905b83",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1084.8278455730954,
+            "y": 489.98485221479729
+          },
+          "nodeIndex": "InventoryCurrent",
+          "nodeLineageTag": "c2c9ea29-330b-4a9a-941a-34d053e9c50f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 916.83192962002931,
+            "y": -50
+          },
+          "nodeIndex": "InventoryMonthly",
+          "nodeLineageTag": "0f1c1d45-f7d6-45b5-b28c-b9f72f86fa9d",
           "size": {
             "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1192.7466542646889,
+            "y": 850.26907127067625
+          },
+          "nodeIndex": "InventoryMovements",
+          "nodeLineageTag": "7961af5d-9dae-4707-8059-323e895db57c",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1063.5600416092448,
+            "y": 206.3855860118955
+          },
+          "nodeIndex": "InventoryPolicy",
+          "nodeLineageTag": "a3eec651-82e8-468b-9163-fe3aa2ecf65b",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 627.14435401671676,
+            "y": 83.877616045447667
+          },
+          "nodeIndex": "OrderDetails",
+          "nodeLineageTag": "811a5be4-7e2b-43f9-810b-7f6945cd37ca",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.24458721084414,
+            "y": 189.28595371249412
+          },
+          "nodeIndex": "Orders",
+          "nodeLineageTag": "f5543496-1281-4cf6-a5ea-ef8f02397109",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 768.67007182662792,
+            "y": 364.90039293447785
+          },
+          "nodeIndex": "Product",
+          "nodeLineageTag": "f9fa19b9-f1c1-47e1-8517-17fe47129a11",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1738.2011985280396,
+            "y": 840.43297042342545
+          },
+          "nodeIndex": "Region",
+          "nodeLineageTag": "8f0a9a48-1535-4c79-85c0-66ddad132e87",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1444.660474276478,
+            "y": 615.74476802377649
+          },
+          "nodeIndex": "Warehouse",
+          "nodeLineageTag": "d838e464-17f7-498f-be81-f1d815c51d1c",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1738.2686686386664,
+            "y": 614.77824269704581
+          },
+          "nodeIndex": "WarehouseMapping",
+          "nodeLineageTag": "e9f406a2-1d19-4153-bf48-8304e62d940b",
+          "size": {
+            "height": 128,
             "width": 234
           },
           "zIndex": 0

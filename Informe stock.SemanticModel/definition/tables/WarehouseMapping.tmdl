@@ -22,3 +22,4 @@ table WarehouseMapping
 				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    Typed = Table.TransformColumnTypes(Headers, {{"SourceWarehouseID", Int64.Type}, {"WarehouseID", Int64.Type}}, "en-US")
 				in Typed
+

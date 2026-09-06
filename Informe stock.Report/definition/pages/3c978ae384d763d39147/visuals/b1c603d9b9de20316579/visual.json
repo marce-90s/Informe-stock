@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "b1c603d9b9de20316579",
+  "position": {
+    "x": 119.04830569574622,
+    "y": 181.802451333814,
+    "z": 6006,
+    "height": 404.21052631578948,
+    "width": 545.40735400144206,
+    "tabOrder": 6006
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Warehouse"
+                    }
+                  },
+                  "Property": "WarehouseName"
+                }
+              },
+              "queryRef": "Warehouse.WarehouseName",
+              "nativeQueryRef": "WarehouseName"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas DAX"
+                    }
+                  },
+                  "Property": "Stock disponible"
+                }
+              },
+              "queryRef": "Medidas DAX.Stock disponible",
+              "nativeQueryRef": "Stock disponible"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas DAX"
+                    }
+                  },
+                  "Property": "Posiciones sin stock"
+                }
+              },
+              "queryRef": "Medidas DAX.Posiciones sin stock",
+              "nativeQueryRef": "Posiciones sin stock"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas DAX"
+                    }
+                  },
+                  "Property": "Unidades a reponer"
+                }
+              },
+              "queryRef": "Medidas DAX.Unidades a reponer",
+              "nativeQueryRef": "Unidades a reponer"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Detalle por depósito'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

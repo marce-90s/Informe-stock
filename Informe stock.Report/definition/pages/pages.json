@@ -1,10 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.1.0/schema.json",
   "pageOrder": [
-    "stock_overview",
-    "stock_evolution",
-    "stock_orders",
-    "3c978ae384d763d39147"
+    "3c978ae384d763d39147",
+    "2e7deba382be0d742707",
+    "779744919440239fdcff"
   ],
-  "activePageName": "stock_evolution"
+  "activePageName": "779744919440239fdcff"
 }

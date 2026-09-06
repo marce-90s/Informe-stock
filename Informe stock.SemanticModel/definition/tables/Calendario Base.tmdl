@@ -43,3 +43,4 @@ table 'Calendario Base'
 				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    Typed = Table.TransformColumnTypes(Headers, {{"Date", type date}, {"Year", Int64.Type}, {"Month", Int64.Type}, {"MonthName", type text}, {"YearMonth", type text}}, "en-US")
 				in Typed
+

@@ -84,3 +84,4 @@ table InventoryCurrent
 				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    Typed = Table.TransformColumnTypes(Headers, {{"Date", type date}, {"ProductID", type text}, {"WarehouseID", Int64.Type}, {"OnHand", Int64.Type}, {"Reserved", Int64.Type}, {"Available", Int64.Type}, {"MinimumStock", Int64.Type}, {"TargetStock", Int64.Type}, {"ReorderQuantity", Int64.Type}, {"IssuesLast30Days", Int64.Type}, {"UnitCost", Currency.Type}, {"StockStatus", type text}}, "en-US")
 				in Typed
+

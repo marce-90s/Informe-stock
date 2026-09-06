@@ -1,9 +1,8 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "3c978ae384d763d39147",
-  "displayName": "BASE",
+  "displayName": "01 | Stock al cierre",
   "displayOption": "FitToPage",
   "height": 720,
-  "width": 1280,
-  "visibility": "HiddenInViewMode"
+  "width": 1280
 }

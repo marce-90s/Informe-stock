@@ -1,0 +1,108 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "6fdd491aef4b103bc21c",
+  "position": {
+    "x": 672.76135544340309,
+    "y": 499.26459985580391,
+    "z": 6005,
+    "height": 210.41095890410961,
+    "width": 596.16438356164383,
+    "tabOrder": 6005
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "InventoryCurrent"
+                    }
+                  },
+                  "Property": "StockStatus"
+                }
+              },
+              "queryRef": "InventoryCurrent.StockStatus",
+              "nativeQueryRef": "StockStatus"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas DAX"
+                    }
+                  },
+                  "Property": "Stock físico"
+                }
+              },
+              "queryRef": "Medidas DAX.Stock fisico",
+              "nativeQueryRef": "Stock fisico"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas DAX"
+                    }
+                  },
+                  "Property": "Unidades a reponer"
+                }
+              },
+              "queryRef": "Medidas DAX.Unidades a reponer",
+              "nativeQueryRef": "Unidades a reponer"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Estado por posición producto / depósito'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

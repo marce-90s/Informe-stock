@@ -48,3 +48,4 @@ table Employee
 				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    Typed = Table.TransformColumnTypes(Headers, {{"EmployeeID", Int64.Type}, {"EmployeeName", type text}, {"EmployeeHireDate", type date}, {"EmployeeJobTitle", type text}, {"WarehouseID", Int64.Type}, {"SourceWarehouseID", Int64.Type}}, "en-US")
 				in Typed
+

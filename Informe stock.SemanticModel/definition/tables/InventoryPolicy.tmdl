@@ -45,3 +45,4 @@ table InventoryPolicy
 				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    Typed = Table.TransformColumnTypes(Headers, {{"ProductID", type text}, {"WarehouseID", Int64.Type}, {"LeadTimeDays", Int64.Type}, {"MinimumStock", Int64.Type}, {"TargetStock", Int64.Type}, {"Scenario", type text}}, "en-US")
 				in Typed
+

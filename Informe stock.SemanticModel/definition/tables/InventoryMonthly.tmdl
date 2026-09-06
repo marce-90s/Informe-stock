@@ -42,3 +42,4 @@ table InventoryMonthly
 				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    Typed = Table.TransformColumnTypes(Headers, {{"Date", type date}, {"ProductID", type text}, {"WarehouseID", Int64.Type}, {"OnHand", Int64.Type}, {"UnitCost", Currency.Type}}, "en-US")
 				in Typed
+

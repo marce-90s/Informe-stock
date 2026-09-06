@@ -33,3 +33,4 @@ table Warehouse
 				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    Typed = Table.TransformColumnTypes(Headers, {{"WarehouseID", Int64.Type}, {"WarehouseName", type text}, {"WarehouseAddress", type text}, {"RegionID", Int64.Type}}, "en-US")
 				in Typed
+

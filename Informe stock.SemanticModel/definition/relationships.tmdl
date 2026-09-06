@@ -65,3 +65,4 @@ relationship rel_15
 relationship rel_16
 	fromColumn: InventoryMonthly.Date
 	toColumn: 'Calendario Base'.Date
+

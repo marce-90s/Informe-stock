@@ -27,3 +27,4 @@ table Customer
 				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    Typed = Table.TransformColumnTypes(Headers, {{"CustomerID", Int64.Type}, {"CustomerName", type text}, {"CustomerCreditLimit", Int64.Type}}, "en-US")
 				in Typed
+

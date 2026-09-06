@@ -45,3 +45,4 @@ table Region
 				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    Typed = Table.TransformColumnTypes(Headers, {{"RegionID", Int64.Type}, {"RegionName", type text}, {"CountryName", type text}, {"State", type text}, {"City", type text}, {"PostalCode", type text}}, "en-US")
 				in Typed
+
