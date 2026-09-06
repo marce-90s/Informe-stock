@@ -1,4 +1,4 @@
-expression DataRoot = "C:/Users/marce/OneDrive/Desktop/Repositorios/Informe-stock/data/prepared" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression DataRoot = "data/prepared" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 2a7150a5-3c7f-401d-bb35-906843055deb
 
 	annotation PBI_ResultType = Text
